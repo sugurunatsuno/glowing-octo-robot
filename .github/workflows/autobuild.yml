@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          lfs: true
+          lfs: false
 
       # Cache
       - uses: actions/cache@v2
@@ -44,7 +44,7 @@ jobs:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: WebGL
+          targetPlatform: StandaloneWindows64
 
       # Output
       - uses: actions/upload-artifact@v2
